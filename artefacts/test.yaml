@@ -1,0 +1,22 @@
+apiVersion: anotherannoymusdata
+kind: ExternalSecret
+metadata:
+  name: some-app-super-secret-target
+  namespace: app-services
+spec:
+  refreshInterval: 1m
+  secretStoreRef:
+    name: app-services-secret-store
+    kind: ClusterSecretStore
+  target:
+    name: mobile-some-app-super-secret-target-target
+    creationPolicy: Owner
+  data:
+    - secretKey: API_BASE_URL
+      remoteRef:
+        key: someSecretRepository
+        property: api_base_url
+    - secretKey: API_SUPER_SECRET
+      remoteRef:
+        key: someSecretRepository
+        property: api_super_secret_value
