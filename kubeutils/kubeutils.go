@@ -6,7 +6,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-func ReadManifest(manifestFile string) (map[string]map[string]string, error) {
+func ReadExternalSecret(manifestFile string) (map[string]map[string]string, error) {
 	yfile, errReader := os.ReadFile(manifestFile)
 	if errReader != nil {
 		return nil, errReader
