@@ -1,4 +1,4 @@
-module github.com/go-easy-utils
+module github.com/brutalzinn/go-easy-utils
 
 go 1.21.4
 
